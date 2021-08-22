@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS reviews CASCADE;
 DROP TABLE IF EXISTS dishes CASCADE;
+DROP TABLE IF EXISTS ordered_items CASCADE;
+DROP TABLE IF EXISTS cart CASCADE;
 
 
 CREATE TABLE users (
@@ -21,9 +23,9 @@ CREATE TABLE orders (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   total_price INT,
   order_date date,
-  order_time = time,
-  ready_by = time,
-  picked_at = time,
+  order_time time,
+  ready_by time,
+  picked_at time,
 );
 
 CREATE TABLE reviews (
@@ -45,14 +47,14 @@ CREATE TABLE items (
 CREATE TABLE ordered_items (
   id SERIAL PRIMARY KEY NOT NULL,
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
-  dish_id INTEGER REFERENCES dishes(id) ON DELETE CASCADE,
+  item_id INTEGER REFERENCES dishes(id) ON DELETE CASCADE,
   quantity SMALLINT
 );
 
 CREATE TABLE cart(
   id SERIAL PRIMARY KEY NOT NULL,
-  order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
-  dish_id INTEGER REFERENCES dishes(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  item_id INTEGER REFERENCES dishes(id) ON DELETE CASCADE,
   quantity SMALLINT
 
 );
