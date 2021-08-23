@@ -7,6 +7,7 @@ $theme-colors: (
   "secondary": $secondary,
 
 );
+
 // Custom.scss
 // Option A: Include all of Bootstrap
 
@@ -28,3 +29,7 @@ body {
   font-weight: 600;
 }
 
+header{
+  background: url("/images/11_Butter_tarts.jpg") no-repeat;
+  color: transparent;
+}
