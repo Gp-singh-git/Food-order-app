@@ -19,42 +19,31 @@ $theme-colors: (
 body {
   background-color: #f4f1ec;
 
-  h1 {
-    color: #244751;
   }
   .navbar-nav{
-    position: sticky;
+    position: fixed;
     color: white;
     padding: 0 0.7em;
     font-weight: 600;
   }
+
   .cover-page{
-    background: url("/images/11_Butter_tarts.jpg") no-repeat;
-    color: transparent;
-    background-size: cover;
-    height: 50vh;
+    background: url("/images/manda.jpg") no-repeat;
+    height: 120px;
+    position: relative;
+   text-align: center;
+
   }
-  .title-container{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
- align-items: center;
-    color: $primary;
+  .text-center {position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
   }
-span {
-    text-transform: capitalize;
-    margin: 0;
-    font-size: 3rem;
-  }
-.intro{
-  display: flex;
-  flex-direction: row;
+.logo{
+  width: 100px;
 }
 
-}
-
-<<<<<<< HEAD
-=======
 .menu-items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -67,4 +56,3 @@ span {
   max-width: 18em;
   margin: 20px auto;
 }
->>>>>>> cc8a1ee0981636d83266a1bb536ebe21688404a9
