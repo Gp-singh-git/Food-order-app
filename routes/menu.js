@@ -35,7 +35,7 @@ module.exports = (db) => {
     .then(data => {
       console.log("my function is running")
       const items = data.rows;
-      res.render ("menu", { items} );
+      res.render ("menu", { items } );
     })
         .catch(err => {
         res

@@ -33,3 +33,16 @@ header{
   background: url("/images/11_Butter_tarts.jpg") no-repeat;
   color: transparent;
 }
+
+.menu-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  max-width: 18em;
+  margin: 20px auto;
+}
