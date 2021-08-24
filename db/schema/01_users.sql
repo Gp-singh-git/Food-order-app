@@ -41,7 +41,7 @@ CREATE TABLE items (
   name VARCHAR(100),
   description TEXT,
   image VARCHAR(255),
-  price INTEGER
+  price FLOAT
 );
 
 CREATE TABLE ordered_items (

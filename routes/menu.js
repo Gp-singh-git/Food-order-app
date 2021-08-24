@@ -35,14 +35,14 @@ module.exports = (db) => {
       .then(data => {
         console.log("my function is running");
         const items = data.rows;
-        res.render("menu", { items});
+        res.render("menu", { items });
       })
       .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
       });
-  })
+  });
 
   // router.get("/users", (req,res) => {
   //   db.query(`

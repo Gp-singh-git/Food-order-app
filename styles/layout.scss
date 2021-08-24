@@ -53,3 +53,18 @@ span {
 
 }
 
+<<<<<<< HEAD
+=======
+.menu-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  max-width: 18em;
+  margin: 20px auto;
+}
+>>>>>>> cc8a1ee0981636d83266a1bb536ebe21688404a9
