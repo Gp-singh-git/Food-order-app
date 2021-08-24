@@ -23,7 +23,7 @@
             <th scope="col"><h4><b>Item Name</b></h4></th>
             <th scope="col"><h4><b>Price</b></h4></th>
             <th scope="col"><h4><b>Quantity</b></h4></th>
-            <th scope ="col"></th>
+
           </tr>
         </thead>
         <tbody>
@@ -33,44 +33,20 @@
               <td><img src ='<%=item.image%>' style = "width:150px; height:150px"></td>
               <td><b><%= item.name %></b></td>
               <td><%= item.price %></td>
-              <form method="POST" action="/orders/<%= item.id %>">
-              <td><select name="quantity" >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>    </td>
+              <td> <%=item.quantity%></td>
 
-              <td>
-                <input type="submit" value = "Add to Cart" style = "font-weight: bold; font-size: 20px "></form>
-              </td>
-            </form>
+
             </tr>
           <% } %>
         </tbody>
       </table>
+      <label> Total order value = <%=total%></label>
 
-      <form method="GET" action="/placeorder">
-        <input type="submit" value = "Place order" style = "font-weight: bold; font-size: 20px; align-self:right"></form>
+      <form method="POST" action="/placeorder/done">
+        <input type="text" name = "total" hidden value = "<%=total%>" >
+        <input type="submit" value = "Book order" style = "font-weight: bold; font-size: 20px "></form>
 
       </form>
-
-
-      <!-- <table>
-        <thead>
-          <tr>item name</tr>
-        </thead>
-        <tbody>
-          <% for (let item of items) { %>
-            <tr>
-              td> <%=item.name%> </td>
-            </tr>
-            <%}%>
-
-        </tbody>
-      </table> -->
-
 
   </section>
   </body>
