@@ -27,6 +27,7 @@ body {
     color: white;
     padding: 0 0.7em;
     font-weight: 600;
+    position: sticky;
   }
   .cover-page{
     background: url("/images/11_Butter_tarts.jpg") no-repeat;
@@ -59,9 +60,14 @@ span {
   grid-template-rows: auto;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: rgb(238, 158, 11);
 }
 
 .card {
   max-width: 18em;
   margin: 20px auto;
+}
+
+.card-img-top {
+  height: 200px;
 }
