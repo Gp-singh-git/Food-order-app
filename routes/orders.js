@@ -7,7 +7,7 @@ module.exports = (db) => {
       .then(data => {
         const items = data.rows;
         console.log(items);
-        res.render("order", {items})
+        res.render("order", {items});
       })
       .catch(err => {
         res
@@ -15,5 +15,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  
   return router;
 };

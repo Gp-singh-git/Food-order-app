@@ -7,25 +7,66 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/order.js"></script> -->
+
   </head>
   <body>
     <%- include('partials/_header') %>
+<br><br>
+<br>
+<br>
 
     <section>
-      <table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><h4><b>Dish Name</b></h4></th>
+            <th scope="col"><h4><b>Image</b></h4></th>
+            <th scope="col"><h4><b>Price</b></h4></th>
+            <th scope="col"><h4><b>Quantity</b></h4></th>
+            <th scope ="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(let item in items) { %>
+            <tr>
+              <form method="POST" action="/orders/<%= item.id %>">
+              <td><img src =<%= item.image %> style = "width:100px; height:100px"></td>
+              <td><b><%= item.name %></b></td>
+              <td><%=item.price%></td>
+              <td><select name="quantity" >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>    </td>
+
+              <td>
+                <input type="submit" value = "Add to Cart" style = "font-weight: bold; font-size: 20px "></form>
+              </td>
+            </form>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+
+
+
+      <!-- <table>
         <thead>
           <tr>item name</tr>
         </thead>
         <tbody>
           <% for (let item of items) { %>
             <tr>
-              <td> <%=item.name%> </td>
+              td> <%=item.name%> </td>
             </tr>
             <%}%>
 
         </tbody>
-      </table>
+      </table> -->
 
 
   </section>
