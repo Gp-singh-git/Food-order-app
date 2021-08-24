@@ -22,16 +22,36 @@ body {
   h1 {
     color: #244751;
   }
-}
-.navbar-nav{
-  color: white;
-  padding: 0 0.7em;
-  font-weight: 600;
+  .navbar-nav{
+    position: sticky;
+    color: white;
+    padding: 0 0.7em;
+    font-weight: 600;
+    position: sticky;
+  }
+  .cover-page{
+    background: url("/images/11_Butter_tarts.jpg") no-repeat;
+    color: transparent;
+    background-size: cover;
+    height: 50vh;
+  }
+  .title-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+ align-items: center;
+    color: $primary;
+  }
+span {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 3rem;
+  }
+.intro{
+  display: flex;
+  flex-direction: row;
 }
 
-header{
-  background: url("/images/11_Butter_tarts.jpg") no-repeat;
-  color: transparent;
 }
 
 .menu-items {
@@ -40,9 +60,14 @@ header{
   grid-template-rows: auto;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: rgb(238, 158, 11);
 }
 
 .card {
   max-width: 18em;
   margin: 20px auto;
+}
+
+.card-img-top {
+  height: 200px;
 }

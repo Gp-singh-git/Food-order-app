@@ -12,20 +12,50 @@
   <body>
     <%- include('partials/_header') %>
     <!--styling for the home page -->
-    <header>
-      <section id="home" class="intro-section">
-        <div class="container">
+    <header class ="cover-page">
+      <section >
+        <div class="title-container">
             <!-- START THE CONTENT FOR THE INTRO  -->
-                <span class="display-2--intro">Hey!, I'm Patrick</span>
-                <span class="display-2--description lh-base">
-                  this is a multi-purpose responsive layout created with bootstrap v5.
-                  (here your can place your description text)
+                <span> Yummy Pastries</span>
+                <span >
+                  for everyone
                 </span>
             </div>
-
-      </section>
-
+          </section>
     </header>
+    <section class="intro">
+        <div class="container">
+          <div class='row'>
+            <div > <img src="/images/5_banner.jpg" alt="" class="rounded float-start"></div>
+        <div>
+            <article> Welcome to the Royal Bakery, Home of exquisite pastries and cakes<br>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. </article>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="/images/1_Banner.jpg" class="d-block w-100" alt="...">
+       </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="/images/2_Banner_Image.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/3_Banner-image.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
 
   </body>
 </html>

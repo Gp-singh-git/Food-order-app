@@ -25,24 +25,24 @@ module.exports = (db) => {
   // });
 
 
-// ----- gets all menu items ---- //
+  // ----- gets all menu items ---- //
 
   router.get("/", (req,res) => {
-     db.query(`
+    db.query(`
     SELECT *
     FROM items;
     `)
-    .then(data => {
-      console.log("my function is running")
-      const items = data.rows;
-      res.render ("menu", { items } );
-    })
-        .catch(err => {
+      .then(data => {
+        console.log("my function is running");
+        const items = data.rows;
+        res.render("menu", { items });
+      })
+      .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
       });
-  })
+  });
 
   // router.get("/users", (req,res) => {
   //   db.query(`
