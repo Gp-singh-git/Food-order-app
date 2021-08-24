@@ -14,21 +14,21 @@
 
     <section>
 
-      <table>
-        <thead>
-          <tr>item name</tr>
-        </thead>
-        <tbody>
+      <div class="menu-items">
           <% for (let item of items) { %>
-            <tr>
-              <td> <%=item.name%> </td>
-              <td> <%=item.price%> </td>
-            </tr>
-            <%}%>
 
-        </tbody>
-      </table>
+            <div class="card">
+              <img class="card-img-top" src="<%=item.image%>" alt="">
+              <div class="card-body">
+                <h5 class="card-title"><%=item.name%></h5>
+                <p class="card-text"><%=item.description%></p>
+                <label><b>$<%=item.price%></b></label>
+              </div>
+            </div>
 
+            <% } %>
+
+          </div>
 
   </section>
   </body>
