@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
+
+  </head>
+  <body>
+    <%- include('partials/_header') %>
+
+
+<div class="form-style">
+    <form class="contact">
+
+      <div class="form-row">
+        <div class="text-contact">
+          For any inquiries please send us message:
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Name:</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Text">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Email:</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Message:</label>
+          <textarea class="form-control" id="inputEmail4" name="Message" rows="4" cols="50">  </textarea>
+          </div>
+        </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+    <footer class="contact-footer">
+      <p class="name-text">Designed By: Shakirat, Ruchika, Gurpreet<br>
+        <a href="mailto:hege@example.com">hege@example.com</a></p>
+    </footer>
+
+</body>
+</html>

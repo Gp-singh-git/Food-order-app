@@ -1,6 +1,6 @@
 /*
  * All routes for Menus are defined here
- * Since this file is loaded in server.js into api/menu,
+ * Since this file is loaded in server.js into menu,
  *   these routes are mounted onto /menu
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
