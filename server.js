@@ -37,6 +37,7 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const orderRoutes = require("./routes/orders")
 const menuRoutes = require("./routes/menu");
+const contactRoutes = require("./routes/contact");
 const placeOrder = require("./routes/placeorder");
 const ownerOrder = require("./routes/owner_orders");
 
@@ -46,8 +47,10 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/orders", orderRoutes(db));
 app.use("/menu", menuRoutes(db));
+app.use("/contact", contactRoutes(db));
 app.use("/placeorder", placeOrder(db));
 app.use("/ownerorder", ownerOrder(db));
+
 // Note: mount other resources here, using the same pattern above
 
 

@@ -18,40 +18,44 @@ $theme-colors: (
 // Then add additional custom code here
 body {
   background-color: #f4f1ec;
+}
 
-  h1 {
-    color: #244751;
-  }
-  .navbar-nav{
-    position: sticky;
+.navbar {
+    z-index: 1030;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
     color: white;
     padding: 0 0.7em;
     font-weight: 600;
-    position: sticky;
-  }
-  .cover-page{
-    background: url("/images/11_Butter_tarts.jpg") no-repeat;
-    color: transparent;
-    background-size: cover;
-    height: 50vh;
-  }
-  .title-container{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
- align-items: center;
-    color: $primary;
-  }
-span {
-    text-transform: capitalize;
-    margin: 0;
-    font-size: 3rem;
-  }
-.intro{
-  display: flex;
-  flex-direction: row;
-}
 
+  }
+
+  .text-center {
+    color: purple;
+    font-size: 50px;
+    font-weight: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .cover-page{
+    background: url("/images/cakeB.jpeg") no-repeat;
+    height: 500px;
+    position: relative;
+   text-align: center;
+  }
+
+  .text-center {position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold 200;
+  padding-bottom: 1.0em;
+  }
+
+.logo{
+  width: 100px;
 }
 
 .menu-items {
@@ -60,7 +64,7 @@ span {
   grid-template-rows: auto;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: rgb(238, 158, 11);
+
 }
 
 .card {
@@ -186,4 +190,72 @@ input {
 
 .new {
   background-color: rgb(202, 143, 143);
+}
+.p-class{
+  padding: 50px;
+}
+
+#cards {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.text{
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: plum;
+  color: white;
+}
+.contact-footer{
+  margin-top: 30em;
+  position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 700px
+
+}
+.name-text{
+  color:  black;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.fa-cookie-bite{
+  margin-left: 10px;
+  color: $primary;
+}
+
+.form-style{
+  margin-top: 80px;
+  margin-left: 80px;
+
+}
+
+.btn-primary{
+  margin-top: 20px;
+}
+.form-control{
+  background-color: gray;
+}
+.text-contact{
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+.form-group{
+  width: 1000px;
+}
+
+textarea{
+  width: 300px;
+  height: 150px;
 }
