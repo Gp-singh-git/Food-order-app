@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (db) => {
+module.exports = (db, client) => {
   router.get("/", (req, res) => {
     const ckv_id = req.session.ck_id;
     const ckv_fn = req.session.ck_fn;
@@ -39,9 +39,21 @@ module.exports = (db) => {
     db.query(`UPDATE orders SET ready_by = '${req.body.ready_value}' WHERE id = ${req.params.tm}`)
     .then( () => {
       res.status(200);
+      db.query(`SELECT first_name, mobile_number from users JOIN orders ON users.id = orders.user_id where orders.id = ${req.params.tm};`)
+      .then(datax => {
+        const j = datax.rows[0];
+        console.log("mobilllllll---------------------",j.mobile_number);
+      client.messages.create({
+        to: `${j.mobile_number}`,
+        from: '+14083407572',
+        body: `Dear ${j.first_name}, Your order no. ${req.params.tm} received with Royal Bakery will be ready by ${req.body.ready_value}.`})
+      .then(message => console.log(message))
+      .catch(error => console.log(error));
+      })
       res.redirect('/ownerorder');
     });
   });
+
 
   router.post("/u/:pk", (req,res) => {
   console.log("recd val: ",req.body.picked_value,"params pk: ",req.params.pk );

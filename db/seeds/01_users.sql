@@ -1,12 +1,12 @@
 -- Users table seeds here (Example)
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Admin', 'Admin', 6478692189, 'abc@gmail.com', 'password', '23 street1 toronto, canada');
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('John', 'Oliver', 7777777777, 'def@gmail.com', 'password', '46 street2 toronto, canada');
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Adam', 'Miller', 8888888888, 'ghi@gmail.com', 'password', '70 street3 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Admin', 'Admin', 6478692189, 'admin@gmail.com', 'password', '23 street1 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('John', 'Oliver', 5199989328, 'user1@gmail.com', 'password', '46 street2 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Adam', 'Miller', 9999999999, 'user2@gmail.com', 'password', '70 street3 toronto, canada');
 
 
-INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 50, '2021-08-01', '13:00:00', '13:10:00', '13:12:00');
-INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 40, '2021-08-02', '11:00:00', '11:15:00', '11:18:00');
-INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(3, 35, '2021-08-03', '16:00:00', '16:05:00', '16:07:00');
+INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 50, '2021-08-01', '13:00', '13:10', '13:12');
+INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 40, '2021-08-02', '11:00', '11:15', '11:18');
+INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(3, 35, '2021-08-03', '16:00', '16:05', '16:07');
 
 INSERT INTO reviews (user_id, order_id, rating, feedback) VALUES (2,2,4.5,'good');
 INSERT INTO reviews (user_id, order_id, rating, feedback) VALUES (2,2,4.5,'good');

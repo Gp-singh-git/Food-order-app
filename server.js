@@ -55,8 +55,8 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/orders", orderRoutes(db));
 app.use("/menu", menuRoutes(db));
 app.use("/contact", contactRoutes(db));
-app.use("/placeorder", placeOrder(db));
-app.use("/ownerorder", ownerOrder(db));
+app.use("/placeorder", placeOrder(db, client));
+app.use("/ownerorder", ownerOrder(db, client));
 app.use("/login", login(db));
 
 // Note: mount other resources here, using the same pattern above
@@ -71,15 +71,7 @@ app.get("/", (req, res) => {
   res.render("index", {ckv_id, ckv_fn});
 });
 
-client.messages
-  .create({
-    to: '+16478692189',
-    from: '+14083407572',
-    body: 'Your order is ready'
-  })
-  .then(message => console.log(message))
-  // here you can implement your fallback code
-  .catch(error => console.log(error));
+
 
 
 

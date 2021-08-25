@@ -24,6 +24,7 @@
             <th scope="col"><h4><b>Price</b></h4></th>
             <th scope="col"><h4><b>Quantity</b></h4></th>
             <th scope="col"><h4><b>Total Price</b></h4></th>
+            <th scope="col"><h4><b>Delete from Cart</b></h4></th>
 
           </tr>
         </thead>
@@ -33,16 +34,19 @@
             <tr>
               <td><img src ='<%=item.image%>' style = "width:150px; height:150px"></td>
               <td><b><%= item.name %></b></td>
-              <td><%= item.price %></td>
+              <td>$ <%= item.price %></td>
               <td> <%=item.quantity%></td>
-              <td> <%=item.quantity * item.price%></td>
+              <td>$ <%=item.quantity * item.price%></td>
+              <td><form method = "POST" action="/placeorder/del/<%=item.id%>">
+              <input type="submit" value = "Delete" style =  >
+              </form></td>
 
 
             </tr>
           <% } %>
         </tbody>
       </table>
-      <label> Total order value = <%=total%></label>
+      <label> Total order value = $<%=total%></label>
 
       <form method="POST" action="/placeorder/done">
         <input type="text" name = "total" hidden value = "<%=total%>" >

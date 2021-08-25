@@ -37,7 +37,7 @@
             <tr>
               <td><img src ='<%=item.image%>' style = "width:150px; height:150px"></td>
               <td><b><%= item.name %></b></td>
-              <td><%= item.price %></td>
+              <td>$<%= item.price %></td>
               <form class = "spl1" method="POST" action="/orders/<%= item.id %>">
               <td><select name="quantity" >
                 <option value="1">1</option>

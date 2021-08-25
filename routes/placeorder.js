@@ -1,11 +1,11 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (db) => {
+module.exports = (db, client) => {
   router.get("/", (req, res) => {
     const ckv_id = req.session.ck_id;
     const ckv_fn = req.session.ck_fn;
-    db.query(`SELECT items.name, items.image, items.price, cart.quantity FROM cart JOIN items on cart.item_id = items.id where cart.user_id = ${req.session.ck_id};`)
+    db.query(`SELECT items.name, items.image, items.price, cart.quantity, cart.id FROM cart JOIN items on cart.item_id = items.id where cart.user_id = ${req.session.ck_id};`)
       .then(data => {
         const items = data.rows;
         let total;
@@ -45,6 +45,29 @@ module.exports = (db) => {
       })
       db.query(`delete from cart where user_id =${req.session.ck_id};`)
       .then()
+      db.query(`SELECT total_price, first_name, mobile_number from orders JOIN users ON users.id = orders.user_id where orders.id = ${x.id};
+      `)
+      .then(data2 => {
+        const xyz = data2.rows[0];
+        console.log("value of xyz",xyz);
+
+        client.messages.create({
+          to: `${xyz.mobile_number}`,
+          from: '+14083407572',
+          body: `Thank you ${xyz.first_name} for placing order with Royal Bakery. Your Order no: ${x.id} and Total Amount: $${xyz.total_price}`})
+        .then(message => console.log(message))
+        .catch(error => console.log(error));
+
+         client.messages.create({
+          to: `6478692189`,
+          from: '+14083407572',
+         body: `Received order from ${xyz.first_name}, with Order no. ${x.id} and Total Amount: $${xyz.total_price}`})
+        .then(message => console.log(message))
+        .catch(error => console.log(error));
+
+      })
+
+
       x["ckv_id"] = req.session.ck_id;
       x["ckv_fn"] = req.session.ck_fn;
       // console.log(x);
@@ -55,7 +78,10 @@ module.exports = (db) => {
     })
   });
 
-
+  router.post("/del/:id", (req, res) => {
+    db.query(`DELETE from cart where id = ${req.params.id}`)
+    res.redirect("/placeorder");
+  })
 
 
   return router;
