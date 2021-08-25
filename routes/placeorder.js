@@ -32,12 +32,20 @@ module.exports = (db) => {
     .then( function(data) {
       let x = data.rows[0];
       console.log("successful insertion ");
-      console.log(x);
-
+      // console.log(x);
+      db.query(`SELECT item_id, quantity FROM cart where user_id = 2;`)
+      .then(data2 => {
+        let y = data2.rows;
+        console.log("value of y is",y);
+        for (let z of y) {
+          db.query(`INSERT INTO ordered_items(order_id, item_id, quantity) VALUES (${x.id}, ${z.item_id}, ${z.quantity});`)
+          .then()
+        }
+      })
       db.query(`delete from cart where user_id =2;`)
       .then()
 
-      console.log(x);
+      // console.log(x);
       res.render("thank_you", x)
     })
     .catch(err => {

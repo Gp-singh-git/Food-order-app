@@ -26,13 +26,15 @@ module.exports = (db) => {
     //                 console.log("check error:", err)
     //               });
     // console.log(check.status);
+    console.log(req.body);
     db.query(`INSERT INTO cart(user_id, item_id, quantity) VALUES (2, ${req.params.id}, ${req.body.quantity})`)
       .then( data => {
         console.log("inserted value in cart")
         db.query(`SELECT * FROM items;`)
       .then(data => {
         const items = data.rows;
-        res.render("order", {items});
+        // res.redirect("/orders");
+        res.send("ok");
       })
       })
       .catch(err => {
