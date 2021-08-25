@@ -23,6 +23,7 @@
             <th scope="col"><h4><b>Item Name</b></h4></th>
             <th scope="col"><h4><b>Price</b></h4></th>
             <th scope="col"><h4><b>Quantity</b></h4></th>
+            <th scope="col"><h4><b>Total Price</b></h4></th>
 
           </tr>
         </thead>
@@ -34,6 +35,7 @@
               <td><b><%= item.name %></b></td>
               <td><%= item.price %></td>
               <td> <%=item.quantity%></td>
+              <td> <%=item.quantity * item.price%></td>
 
 
             </tr>

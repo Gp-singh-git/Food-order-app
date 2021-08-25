@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Place your order</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+
+  </head>
+  <body style=  "background-color: rgb(192, 221, 151); display:flex; justify-content:center; flex-direction:column">
+    <%- include('partials/_header') %>
+<br><br>
+<br>
+<br>
+
+<% for(let item of items.reverse()) { %>
+
+<div class = "order_container">
+  <header class = "header1">
+    <div><h1>Customer name: <%=item.first_name%> <%=item.last_name%> </h1></div>
+    <div><h1>Order Received at <%=item.order_time%></h1>
+    </div>
+
+  </header>
+  <div class = "details">
+    <div class = "order_no" >
+      <h2>Order No. </h2>
+      <h1 class = "order_caption"><%=item.id%></h1>
+    </div>
+    <div class = "order_details">
+      <h2>Items</h2>
+
+      <% for( let x of item["details"]) { %>
+      <h4><%=x["name"]%> - <%=x["quantity"]%> no.</h4>
+      <%}%>
+
+    </div>
+    <div class = "order_readyby">
+      <Form class=form_ready method="POST" action="/ownerorder/<%=item.id%>">
+      <h2>Order Ready by</h2>
+      <% if(!item.ready_by) { %>
+      <input type="text" name="ready_value">
+      <br>
+      <button type="submit">Update</button>
+      <style type="text/css" >
+        body{ background-color: rgb(214, 125, 125); }
+      </style>
+
+
+      <%} else {%>
+      <input type="text" disabled name="ready_value", value = '<%=item.ready_by%>'>
+      <br>
+
+      <%}%>
+      </Form>
+    </div>
+    <div class="picked_at">
+      <Form class="form_picked " method="POST" action="/ownerorder/u/<%=item.id%>">
+        <h2>Order Picked at</h2>
+        <% if(!item.picked_at) { %>
+
+        <input type="text" name="picked_value">
+        <br>
+        <button type="submit">Update</button>
+        <%} else {%>
+          <input type="text" disabled name="picked_value", value = '<%=item.picked_at%>'>
+          <br>
+
+       <%}%>
+
+      </Form>
+
+    </div>
+  </div>
+</div>
+
+
+
+<br><br>
+
+
+
+<% }%>
+  </body>
+</html>

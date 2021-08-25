@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
+
+  </head>
+  <body>
+    <%- include('partials/_header') %>
+
+    <main>
+      <br><br><br><br>
+      <h2>Existing User? Login here</h2>
+      <form class="form-login" action="/login" method="POST">
+        <div class="form-group">
+          <label for="emailx">Enter a username:</label>
+          <input class="form-control"  name= "emailx" placeholder="Enter Email" required>
+          <label for="passwordx">Enter a password:</label>
+          <input class="form-control" type="password" name= "passwordx" placeholder="Password" required>
+          <button type="submit" >Submit</button>
+        </div>
+        </form>
+        <br><br>
+        <h2>New User? Please Sign up</h2>
+        <form class="form-register" action="/login/r" method="POST">
+          <div class="form-group">
+            <label for="first_name">Enter First Name:</label>
+            <input class="form-control" type="text" name="first_name"  required>
+            <label for="last_name">Enter Last Name:</label>
+            <input class="form-control" type="text" name="last_name" required >
+            <label for="mobile_number">Enter Mobile number:</label>
+            <input class="form-control" type="text" name="mobile_number"  required >
+            <label for="email">Enter email:</label>
+            <input class="form-control" type="email" name="email"  required >
+            <label for="password">Enter a password:</label>
+            <input class="form-control" type="password" name="password"  required >
+            <label for="address">Enter Current Address:</label>
+            <textarea class="form-control" name="address"  required></textarea>
+            <button type="submit" >Submit</button>
+          </div>
+        </form>
+
+    </main>
+
+
+</body>
+</html>
