@@ -10,7 +10,9 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
-
+const accountSid = process.env.TWILIO_ACCOUNT_SID; // Your Account SID from www.twilio.com/console
+const authToken = process.env.TWILIO_AUTH_TOKEN;   // Your Auth Token from www.twilio.com/console
+const client = require('twilio')(accountSid, authToken);
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -69,6 +71,20 @@ app.get("/", (req, res) => {
   res.render("index", {ckv_id, ckv_fn});
 });
 
+client.messages
+  .create({
+    to: '+16478692189',
+    from: '+14083407572',
+    body: 'Your order is ready'
+  })
+  .then(message => console.log(message))
+  // here you can implement your fallback code
+  .catch(error => console.log(error));
+
+
+
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+

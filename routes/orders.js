@@ -16,7 +16,7 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
-  })
+  });
   router.post("/:id", (req, res) => {
     // console.log(req.params.id, req.body.quantity);
     // const check = db.query(`select * from cart where user_id = ${req.params.id} AND item_id = ${req.body.quantity}`)
@@ -43,7 +43,7 @@ module.exports = (db) => {
       .catch(err => {
         console.log("some error", err);
       });
-  })
+  });
 
   router.get("/done", (req, res) => {
     const ckv_id = req.session.ck_id;
