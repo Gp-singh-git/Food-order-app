@@ -39,19 +39,27 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  .cover-page{
-    background: url("/images/cakeB.jpeg") no-repeat;
+  .cover-image{
+
+    // background: url("/images/man.jpg") no-repeat;
     height: 500px;
     position: relative;
    text-align: center;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+
   }
 
-  .text-center {position: absolute;
+  .text-center {
+  position: absolute;
   top: 50%;
-  left: 50%;
+  left: 82%;
   transform: translate(-50%, -50%);
   font-weight: bold 200;
   padding-bottom: 1.0em;
+
+
   }
 
 .logo{
@@ -64,12 +72,14 @@ body {
   grid-template-rows: auto;
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 3em;
 
 }
 
 .card {
   max-width: 18em;
   margin: 20px auto;
+
 }
 
 .card-img-top {
@@ -235,6 +245,8 @@ footer {
 .form-style{
   margin-top: 80px;
   margin-left: 80px;
+  display: flex;
+  justify-content: center;
 
 }
 
