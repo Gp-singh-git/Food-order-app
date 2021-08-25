@@ -37,7 +37,8 @@
               <td><b><%= item.name %></b></td>
               <td>$<%= item.price %></td>
               <form class = "spl1" method="POST" action="/orders/<%= item.id %>">
-              <td><select name="quantity" >
+              <td><select required name="quantity" >
+                <option value>select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
