@@ -12,8 +12,27 @@
       <div class="navbar-nav">
          <a class="nav-item nav-link" href="/"> Home</a>
          <a class="nav-item nav-link" href="/menu"> Menu</a>
-        <a class="nav-item nav-link" href="/orders">Order Now</a>
         <a class="nav-item nav-link" href="/contact">Contact us</a>
+
+
+         <%  if (ckv_id === 1) {%>
+          <a class="nav-item nav-link" href="/ownerorder">All Orders</a>
+          <a class="nav-item nav-link" style = "color:aquamarine" href="/"><%=ckv_fn%> </a>
+          <form method="POST" action="/login/l">
+            <button type=submit value = "Logout" style = "background-color:#3e36b0; border: 2px solid #9b370f; font-weight: bold" >Logout</button>
+          </form>
+          <%} else if(ckv_id){%>
+            <a class="nav-item nav-link" href="/orders">Order Now</a>
+            <a class="nav-item nav-link" style = "color:aquamarine" href="/"><%=ckv_fn%> </a>
+            <form method="POST" action="/login/l">
+              <button type=submit value = "Logout" style = "background-color:#3e36b0; border: 2px solid #9b370f; font-weight: bold" >Logout</button>
+            </form>
+
+            <% } else {%>
+              <form method="GET" action="/login">
+                <button type=submit value = "Login" style = "background-color:#3e36b0; border: 2px solid #9b370f; font-weight: bold" >Login</button>
+              </form>
+              <%}%>
       </div>
     </div>
   </div>
