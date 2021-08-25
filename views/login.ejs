@@ -12,20 +12,35 @@
   <body>
     <%- include('partials/_header') %>
 
-    <main>
-      <br><br><br><br>
-      <h2>Existing User? Login here</h2>
-      <form class="form-login" action="/login" method="POST">
-        <div class="form-group">
-          <label for="emailx">Enter a username:</label>
-          <input class="form-control"  name= "emailx" placeholder="Enter Email" required>
-          <label for="passwordx">Enter a password:</label>
-          <input class="form-control" type="password" name= "passwordx" placeholder="Password" required>
-          <button type="submit" >Submit</button>
-        </div>
+    <main class="login-form">
+      <div>
+
+
+        <div>
+          <h3 style="text-align: center;">Existing User? Login here</h3>
+        <form action="/login"  class="form-inline" method="POST">
+
+          <div>
+            <div class="col-auto">
+              <label class="sr-only" for="emailx">Enter Email</label>
+              <input type="text" class="form-control mb-2" name= "emailx" id="inlineFormInput" placeholder="Enter Email">
+            </div>
+            <div class="col-auto">
+              <label class="sr-only" for="passwordx">Enter Password</label>
+              <div class="input-group mb-2">
+
+                <input type="password" class="form-control" id="inlineFormInputGroup" name= "passwordx" placeholder="Password">
+              </div>
+            </div>
+
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
+          </div>
         </form>
-        <br><br>
-        <h2>New User? Please Sign up</h2>
+      </div>
+
+        <h3 style="text-align: center;">New User? Please Sign up</h3>
         <form class="form-register" action="/login/r" method="POST">
           <div class="form-group">
             <label for="first_name">Enter First Name:</label>
@@ -40,12 +55,17 @@
             <input class="form-control" type="password" name="password"  required >
             <label for="address">Enter Current Address:</label>
             <textarea class="form-control" name="address"  required></textarea>
-            <button type="submit" >Submit</button>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
           </div>
         </form>
-
+      </div>
     </main>
-
+    <footer class="login-footer">
+      <p class="name-text">Designed By: Shakirat, Ruchika, Gurpreet<br>
+        <a href="mailto:hege@example.com">hege@example.com</a></p>
+    </footer>
 
 </body>
 </html>
