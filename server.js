@@ -73,7 +73,7 @@ app.get("/", (req, res) => {
 
 client.messages
   .create({
-    to: '+16478692189',
+    to: '6478692189',
     from: '+14083407572',
     body: 'Your order is ready'
   })
