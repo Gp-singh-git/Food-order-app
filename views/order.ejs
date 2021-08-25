@@ -12,34 +12,33 @@
   </head>
   <body>
     <%- include('partials/_header') %>
-<br><br>
-<br>
-<br>
-<form method="GET" action="/placeorder">
-  <input type="submit" value = "Place order" style = "font-weight: bold; font-size: 20px; align-self:right">
+
+<form method="GET" class="place-order" action="/placeorder">
+  <input type="submit" value = "Place order">
 
 </form>
 
-    <section>
-      <table class="table">
-        <thead>
-          <tr>
+    <section class="order-section">
+      <table class="order-table">
+
+          <tr class="header-items">
             <th scope="col"><h4><b>Item image</b></h4></th>
             <th scope="col"><h4><b>Item Name</b></h4></th>
             <th scope="col"><h4><b>Price</b></h4></th>
             <th scope="col"><h4><b>Quantity</b></h4></th>
-            <th scope ="col"></th>
+            <th scope="col"><h4><b>Cart</b></h4></th>
           </tr>
-        </thead>
+
         <tbody>
 
           <% for(let item of items) { %>
-            <tr>
-              <td><img src ='<%=item.image%>' style = "width:150px; height:150px"></td>
+            <tr class="table-items">
+              <td><img src ='<%=item.image%>'></td>
               <td><b><%= item.name %></b></td>
-              <td><%= item.price %></td>
+              <td>$<%= item.price %></td>
               <form class = "spl1" method="POST" action="/orders/<%= item.id %>">
-              <td><select name="quantity" >
+              <td><select required name="quantity" >
+                <option value>select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -48,7 +47,7 @@
               </select>    </td>
 
               <td>
-                <input type="submit" value = "Add to Cart" style = "font-weight: bold; font-size: 20px ">
+                <input type="submit" class="cart-button" value = "Add to Cart">
               </td>
             </form>
             </tr>
