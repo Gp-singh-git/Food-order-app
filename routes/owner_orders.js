@@ -3,6 +3,9 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
+    const ckv_id = req.session.ck_id;
+    const ckv_fn = req.session.ck_fn;
+
     db.query(`SELECT users.first_name, users.last_name, orders.id, orders.order_time, orders.ready_by, orders.picked_at from orders JOIN users ON orders.user_id = users.id ORDER BY id;
     `)
       .then(data => {
@@ -18,7 +21,7 @@ module.exports = (db) => {
           for (let i=0; i<items.length; i++) {
               items[i]["details"] = values[i].rows;
           }
-          res.render("owner_orders", {items})
+          res.render("owner_orders", {items, ckv_id, ckv_fn})
 
         })
       // console.log(items);

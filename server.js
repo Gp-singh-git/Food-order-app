@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const cookieSession = require('cookie-session');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -30,7 +31,10 @@ app.use("/styles", sass({
   outputStyle: 'expanded'
 }));
 app.use(express.static("public"));
-
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
@@ -40,6 +44,7 @@ const menuRoutes = require("./routes/menu");
 const contactRoutes = require("./routes/contact");
 const placeOrder = require("./routes/placeorder");
 const ownerOrder = require("./routes/owner_orders");
+const login = require("./routes/login");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -50,6 +55,7 @@ app.use("/menu", menuRoutes(db));
 app.use("/contact", contactRoutes(db));
 app.use("/placeorder", placeOrder(db));
 app.use("/ownerorder", ownerOrder(db));
+app.use("/login", login(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -58,7 +64,9 @@ app.use("/ownerorder", ownerOrder(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  const ckv_id = req.session.ck_id ? req.session.ck_id : "";
+  const ckv_fn = req.session.ck_fn ? req.session.ck_fn : "";
+  res.render("index", {ckv_id, ckv_fn});
 });
 
 app.listen(PORT, () => {

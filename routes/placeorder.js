@@ -3,16 +3,17 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT items.name, items.image, items.price, cart.quantity FROM cart JOIN items on cart.item_id = items.id where cart.user_id = 2;`)
+    const ckv_id = req.session.ck_id;
+    const ckv_fn = req.session.ck_fn;
+    db.query(`SELECT items.name, items.image, items.price, cart.quantity FROM cart JOIN items on cart.item_id = items.id where cart.user_id = ${req.session.ck_id};`)
       .then(data => {
         const items = data.rows;
         let total;
-        db.query(`select sum(price * quantity) from cart JOIN items on cart.item_id = items.id where cart.user_id = 2;`)
+        db.query(`select sum(price * quantity) from cart JOIN items on cart.item_id = items.id where cart.user_id = ${req.session.ck_id};`)
                       .then(data1 => {
                         total = data1.rows[0].sum;
                         console.log("total value", total)
-                        res.render("placeorder", {items, total} )
-
+                        res.render("placeorder", {items, total, ckv_id, ckv_fn} )
                       })
       })
       .catch(err => {
@@ -28,12 +29,12 @@ module.exports = (db) => {
     let time1 = d.toTimeString();
     time1 = time1.split(' ')[0];
       console.log(date1, time1, req.body.total);
-    db.query(`INSERT INTO orders(user_id, total_price, order_date, order_time) VALUES (2, ${req.body.total}, '${date1}', '${time1}') RETURNING *;`)
+    db.query(`INSERT INTO orders(user_id, total_price, order_date, order_time) VALUES (${req.session.ck_id}, ${req.body.total}, '${date1}', '${time1}') RETURNING *;`)
     .then( function(data) {
       let x = data.rows[0];
       console.log("successful insertion ");
       // console.log(x);
-      db.query(`SELECT item_id, quantity FROM cart where user_id = 2;`)
+      db.query(`SELECT item_id, quantity FROM cart where user_id = ${req.session.ck_id};`)
       .then(data2 => {
         let y = data2.rows;
         console.log("value of y is",y);
@@ -42,9 +43,10 @@ module.exports = (db) => {
           .then()
         }
       })
-      db.query(`delete from cart where user_id =2;`)
+      db.query(`delete from cart where user_id =${req.session.ck_id};`)
       .then()
-
+      x["ckv_id"] = req.session.ck_id;
+      x["ckv_fn"] = req.session.ck_fn;
       // console.log(x);
       res.render("thank_you", x)
     })

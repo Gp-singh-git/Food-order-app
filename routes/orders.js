@@ -2,11 +2,14 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+
   router.get("/", (req, res) => {
+    const ckv_id = req.session.ck_id;
+    const ckv_fn = req.session.ck_fn;
     db.query(`SELECT * FROM items;`)
       .then(data => {
         const items = data.rows;
-        res.render("order", {items})
+        res.render("order", {items, ckv_id, ckv_fn})
       })
       .catch(err => {
         res
@@ -27,7 +30,7 @@ module.exports = (db) => {
     //               });
     // console.log(check.status);
     console.log(req.body);
-    db.query(`INSERT INTO cart(user_id, item_id, quantity) VALUES (2, ${req.params.id}, ${req.body.quantity})`)
+    db.query(`INSERT INTO cart(user_id, item_id, quantity) VALUES (${req.session.ck_id}, ${req.params.id}, ${req.body.quantity})`)
       .then( data => {
         console.log("inserted value in cart")
         db.query(`SELECT * FROM items;`)
@@ -43,7 +46,9 @@ module.exports = (db) => {
   })
 
   router.get("/done", (req, res) => {
-    res.render("placeorder");
+    const ckv_id = req.session.ck_id;
+    const ckv_fn = req.session.ck_fn;
+    res.render("placeorder", {ckv_id, ckv_fn});
   })
 
 
