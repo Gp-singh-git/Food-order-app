@@ -47,16 +47,9 @@ body {
     padding-bottom: 1.0em;
   }
 
-  .cover-image{
 
-    // background: url("/images/man.jpg") no-repeat;
-    height: 500px;
-    position: relative;
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   width: 100%;
-
+  .carousel-item {
+    height: 85vh;
   }
 
 
