@@ -27,7 +27,7 @@ module.exports = (db) => {
       if (ourUser.length === 0) {
 
         res.status(400).send("Invalid Credentials, Please try again");
-      } else if (inputEmail === 'abc@gmail.com') {
+      } else if (inputEmail === 'admin@gmail.com') {
         req.session.ck_fn = ourUser[0]["first_name"];
         req.session.ck_id = ourUser[0]["id"];
         res.redirect("/ownerorder");
