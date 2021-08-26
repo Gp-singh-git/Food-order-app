@@ -41,7 +41,7 @@ app.use(cookieSession({
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-const orderRoutes = require("./routes/orders")
+const orderRoutes = require("./routes/orders");
 const menuRoutes = require("./routes/menu");
 const contactRoutes = require("./routes/contact");
 const placeOrder = require("./routes/placeorder");
@@ -49,7 +49,6 @@ const ownerOrder = require("./routes/owner_orders");
 const login = require("./routes/login");
 const myOrder = require("./routes/myorders");
 const ownerFeedbacks = require("./routes/ownerfeedbacks");
-const bcrypt = require('bcrypt');
 
 
 // Mount all resource routes
