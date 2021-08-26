@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Place your order</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/order.js"></script> -->
+  </head>
+  <body>
+    <%- include('partials/_header') %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+   <h2> Order No. <%=items[0].id%></h2>
+   <Form method="POST" action="/myorders/o/<%=items[0].id%>">
+
+     <h3>Give your rating for this order</h3>
+     <br>
+     <select required name="my_rating" >
+       <option value>select</option>
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+      </select>
+      <br><br>
+      <h3>Please describe how was your experience with this order</h3>
+      <textarea name = "my_feedback"></textarea>
+      <br><br>
+
+      <button type="submit" value = "Submit" class="btn btn-primary"> Submit</button>
+
+    </Form>
+
+    </body>
+    </html>

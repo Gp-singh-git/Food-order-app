@@ -47,6 +47,10 @@ const contactRoutes = require("./routes/contact");
 const placeOrder = require("./routes/placeorder");
 const ownerOrder = require("./routes/owner_orders");
 const login = require("./routes/login");
+const myOrder = require("./routes/myorders");
+const ownerFeedbacks = require("./routes/ownerfeedbacks");
+const bcrypt = require('bcrypt');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -58,6 +62,8 @@ app.use("/contact", contactRoutes(db));
 app.use("/placeorder", placeOrder(db, client));
 app.use("/ownerorder", ownerOrder(db, client));
 app.use("/login", login(db));
+app.use("/myorders", myOrder(db));
+app.use("/ownerfeedbacks", ownerFeedbacks(db));
 
 // Note: mount other resources here, using the same pattern above
 

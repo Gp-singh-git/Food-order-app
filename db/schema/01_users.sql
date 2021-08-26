@@ -21,7 +21,7 @@ CREATE TABLE users (
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  total_price INT,
+  total_price FLOAT,
   order_date date,
   order_time time,
   ready_by time,
