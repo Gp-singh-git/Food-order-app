@@ -49,10 +49,20 @@ body {
 
 
   .carousel-item {
-    height: 85vh;
+    height: 80vh;
+  }
+  @media only screen and (max-width:400px){
+    .carousel-item {
+      height: 50vh;
+    }
   }
 
+  .card-columns {
+    @include media-breakpoint-only(md) {
+      column-count: 1;
+    }
 
+  }
 .logo{
   width: 15vh;
 }
@@ -195,33 +205,12 @@ h2 {
 .new {
   background-color: rgb(202, 143, 143);
 }
-.p-class{
-display: flex;
-flex-direction: row;
-margin-top: 2em;
-border: solid 1px ;
-margin-left:2em;
-margin-right: 2em;
-padding-top: 1em;
-margin-bottom: 1em;
-}
+
 .p-class img{
   width: 30vh;
   height: 30vh;
-  padding-bottom: 1em;
-  padding-top: 1em;
 }
-.p-class p{
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  margin-top: 1.0em;
-}
-.p-text{
-  display: flex;
-  flex-direction: column;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
+
 #cards {
   display: flex;
   flex-direction: row;
