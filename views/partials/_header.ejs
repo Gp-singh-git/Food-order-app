@@ -5,18 +5,11 @@
       <img src= "/images/vector.svg" class="d-inline-block logo"alt="logo" >
       Royal Bakery
     </a>
-<<<<<<< HEAD
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-=======
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
 
     <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
->>>>>>> 53ede5e5c65e838f1750699491165953a116af78
       <div class="navbar-nav">
          <a class="nav-item nav-link" href="/"> Home</a>
          <a class="nav-item nav-link" href="/menu"> Menu</a>
@@ -29,7 +22,7 @@
       </div>
       <a class="nav-item nav-link" style = "color:aquamarine" href="/"><%=ckv_fn%> </a>
           <form method="POST" action="/login/l">
-            <button type=submit class="login-button" value="Logout">Logout</button>
+            <button type=submit class="login-button btn btn-outline-primary" value="Logout">Logout</button>
           </form>
           <%} else if(ckv_id){%>
             <a class="nav-item nav-link" href="/orders">Order Now</a>
@@ -41,15 +34,15 @@
         <a class="nav-item nav-link" style = "color:aquamarine" href="/"><%=ckv_fn%> </a>
 
             <form method="POST" action="/login/l">
-              <button type=submit class="login-button" value="Logout">Logout</button>
+              <button type=submit class="login-button btn btn-outline-primary" value="Logout">Logout</button>
             </form>
 
             <% } else {%>
             </div>
           </div>
               <form method="GET" action="/login">
-                <button type=submit class="login-button" value = "Login" >Login</button>
-              </form>
+                <button type=submit class="login-button btn btn-outline-primary" value="Login" >Login</button>
+             </form>
               <%}%>
 
 </div>

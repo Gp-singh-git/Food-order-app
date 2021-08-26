@@ -2,9 +2,11 @@
 // to override the bootstrap primary color
 $primary: #6f42c1;
 $secondary : white;
+$danger:rgba(218, 12, 12, 0.767);
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
+  'danger':$danger,
 
 );
 
@@ -86,8 +88,8 @@ body {
 
 
 .order_container {
-  background-color: rgb(119, 200, 119);
-  border: 5px  solid  rgb(6, 72, 2);
+  // background-color: rgb(119, 200, 119);
+  // border: 5px  solid  rgb(6, 72, 2);
   width : 80%;
   height: 300px;
   position:center;
@@ -95,41 +97,44 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   align-self:center;
-
+margin-bottom: 3em;
 }
 
 
 .header1 {
-  background-color: rgb(92, 92, 245);
+  background-color: $primary;
   width:100%;
   height:22%;
   display:flex;
   justify-content: space-around;
   color:azure;
   box-sizing: border-box;
-  border: 5px  solid  rgb(6, 72, 2);
+
+}
+.owner-div{
+   display:flex;
+   justify-content:center;
+   flex-direction:column;
+  margin-top: 7em;
 }
 .header1 h1 {
   width:100%;
   margin: 2px;
+  padding-top: 0.5em;
   font-size: 1.5rem;
   text-align: center;
 
 }
-.header1 div {
-  width:100%;
-  border: 5px  solid  rgb(6, 72, 2);
-  box-sizing:content-box;
-}
+
 
 
 .details {
-  background-color: rgb(110, 202, 110);
+
   display:flex;
   justify-content: space-between;
   width:100%;
   height:80%;
-  border: 5px  solid  rgb(6, 72, 2);
+  border: 5px  solid;
   box-sizing: border-box;
 }
 .order_no {
