@@ -24,8 +24,8 @@ module.exports = (db, client) => {
   });
 
   router.post("/done", (req, res) => {
-    // let date1 = new Date().toLocaleDateString();
-    let date1 = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+    let date1 = new Date().toLocaleDateString();
+    // let date1 = new Date();
     // console.log("new date", date1);
     // let d = new Date();
     // let time1 = d.toTimeString();

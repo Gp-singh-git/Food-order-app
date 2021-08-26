@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Place your order</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/order.js"></script> -->
+  </head>
+  <body>
+    <%- include('partials/_header') %>
+
+
+    <section class="order-section">
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th scope="col"><h4><b>Order No.</b></h4></th>
+            <th scope="col"><h4><b>Items Ordered</b></h4></th>
+            <th scope="col"><h4><b>Total Price</b></h4></th>
+            <th scope="col"><h4><b>Order Date</b></h4></th>
+            <th scope="col"><h4><b>Order Time</b></h4></th>
+            <th scope="col"><h4><b>Feedback</b></h4></th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(let item of items) { %>
+            <tr class="table-items">
+              <td><b><%= item.id %></b></td>
+              <td>   <div class = "order_details_myorder">
+
+
+                <% for( let x of item["details"]) { %>
+                <h4><%=x["name"]%> - <%=x["quantity"]%> no.</h4>
+                <%}%>
+
+              </div></td>
+              <td>$ <%=item.total_price%></td>
+              <td> <%=item.order_date.toLocaleString().slice(0,-13)%></td>
+              <td> <%=item.order_time%></td>
+              <% if (item.rating) {%>
+                <td> <%=item.rating%></td>
+              <% } else { %>
+              <td><form method = "GET" action="/myorders/<%=item.id%>">
+              <button type="submit" value = "feedback" class="btn btn-lg btn-outline-danger">Give Feedback </button>
+              </form></td>
+              <%}%>
+
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+
+
+  </section>
+
+  </body>
+</html>

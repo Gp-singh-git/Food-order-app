@@ -1,15 +1,18 @@
 -- Users table seeds here (Example)
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Admin', 'Admin', 6478692189, 'admin@gmail.com', 'password', '23 street1 toronto, canada');
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('John', 'Oliver', 5199989328, 'user1@gmail.com', 'password', '46 street2 toronto, canada');
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Adam', 'Miller', 9999999999, 'user2@gmail.com', 'password', '70 street3 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Admin', 'Admin', 6478692189, 'admin@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '23 street1 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('John', 'Oliver', 5199989328, 'user1@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '46 street2 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Adam', 'Miller', 9999999999, 'user2@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '70 street3 toronto, canada');
 
 
-INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 50, '2021-08-01', '13:00', '13:10', '13:12');
-INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 40, '2021-08-02', '11:00', '11:15', '11:18');
-INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(3, 35, '2021-08-03', '16:00', '16:05', '16:07');
+INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 50.45, '2021-08-21', '13:15', '13:30', '13:32');
+INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(2, 40.12, '2021-08-22', '11:40', '11:45', '11:48');
+INSERT INTO orders (user_id, total_price, order_date, order_time, ready_by, picked_at) VALUES(3, 35.15, '2021-08-23', '16:20', '16:25', '16:27');
+INSERT INTO orders (user_id, total_price, order_date, order_time) VALUES(2, 40.02, '2021-08-26', '09:08');
 
-INSERT INTO reviews (user_id, order_id, rating, feedback) VALUES (2,2,4.5,'good');
-INSERT INTO reviews (user_id, order_id, rating, feedback) VALUES (2,2,4.5,'good');
+
+INSERT INTO reviews (user_id, order_id, rating, feedback) VALUES (2,2,4.5,'Cake was really nice & impressed with quick service. Thumbs up!!');
+INSERT INTO reviews (user_id, order_id, rating, feedback) VALUES (3,3,2.0,'Your staff is rude.');
+
 
 INSERT INTO items (name, description, image, price) VALUES ('Black Forest Cake', 'This black forest cake combines rich chocolate cake layers, with cherries and syrup liquor topped off with our fluffy whipped cream frosting.', '/images/1_Black_Forest.jpg', 23.99);
 INSERT INTO items (name, description, image, price) VALUES ('HazelNut Cake', 'A crunchy chocolaty hazelnutty base with hazelnut cake and hazelnut mousse? It’s a perfect trio of tastes and textures all in one bite!', '/images/2_Hazelnut cake.jpg', 25.99);
@@ -32,4 +35,6 @@ INSERT INTO ordered_items (order_id, item_id, quantity) VALUES (1,5,4);
 INSERT INTO ordered_items (order_id, item_id, quantity) VALUES (2,1,4);
 INSERT INTO ordered_items (order_id, item_id, quantity) VALUES (2,3,6);
 INSERT INTO ordered_items (order_id, item_id, quantity) VALUES (3,4,4);
+INSERT INTO ordered_items (order_id, item_id, quantity) VALUES (4,7,2);
+INSERT INTO ordered_items (order_id, item_id, quantity) VALUES (4,9,1);
 
