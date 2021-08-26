@@ -14,7 +14,9 @@
          <a class="nav-item nav-link" href="/"> Home</a>
          <a class="nav-item nav-link" href="/menu"> Menu</a>
         <a class="nav-item nav-link" href="/contact">Contact us</a>
-
+        <% if (!ckv_id) {%>
+          <a class="nav-item nav-link" href="/login">Order Now</a>
+          <%}%>
 
          <%  if (ckv_id === 1) {%>
           <a class="nav-item nav-link" href="/ownerorder">All Orders</a>

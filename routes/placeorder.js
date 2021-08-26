@@ -24,9 +24,14 @@ module.exports = (db, client) => {
   });
 
   router.post("/done", (req, res) => {
-    let date1 = new Date().toLocaleDateString();
-    let d = new Date();
-    let time1 = d.toTimeString();
+    // let date1 = new Date().toLocaleDateString();
+    let date1 = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+    // console.log("new date", date1);
+    // let d = new Date();
+    // let time1 = d.toTimeString();
+
+    let dd = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+    let time1  = dd.slice(11);
     time1 = time1.split(' ')[0];
       console.log(date1, time1, req.body.total);
     db.query(`INSERT INTO orders(user_id, total_price, order_date, order_time) VALUES (${req.session.ck_id}, ${req.body.total}, '${date1}', '${time1}') RETURNING *;`)
