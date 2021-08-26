@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/order.js"></script> -->
+
   </head>
   <body>
     <%- include('partials/_header') %>
 
-<br><br><br><br><br><br>
-<h2>User Reviews</h2>
     <section class="order-section">
-      <table class="order-table">
+      <h2>User Reviews</h2>
+      <table class="order-table table table-striped">
         <thead>
           <tr>
             <th scope="col"><h4><b>Order No.</b></h4></th>
@@ -30,7 +29,7 @@
 
           <% for(let item of items) { %>
             <tr class="table-items">
-              <td><b><%= item.order_id %></b></td>
+              <th scope="row"><%= item.order_id %></th>
               <td><%=item.first_name%> <%=item.last_name%> </td>
               <td> <%=item.mobile_number%></td>
               <td> <%=item.rating%></td>
@@ -40,8 +39,6 @@
           <% } %>
         </tbody>
       </table>
-
-
 
   </section>
 
