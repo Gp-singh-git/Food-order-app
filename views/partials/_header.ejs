@@ -24,7 +24,7 @@
       </div>
       <a class="nav-item nav-link" style = "color:aquamarine" href="/"><%=ckv_fn%> </a>
           <form method="POST" action="/login/l">
-            <button type=submit class="login-button" value="Logout">Logout</button>
+            <button type=submit class="login-button btn btn-outline-primary" value="Logout">Logout</button>
           </form>
           <%} else if(ckv_id){%>
             <a class="nav-item nav-link" href="/orders">Order Now</a>
@@ -36,15 +36,15 @@
         <a class="nav-item nav-link" style = "color:aquamarine" href="/"><%=ckv_fn%> </a>
 
             <form method="POST" action="/login/l">
-              <button type=submit class="login-button" value="Logout">Logout</button>
+              <button type=submit class="login-button btn btn-outline-primary" value="Logout">Logout</button>
             </form>
 
             <% } else {%>
             </div>
           </div>
               <form method="GET" action="/login">
-                <button type=submit class="login-button" value = "Login" >Login</button>
-              </form>
+                <button type=submit class="login-button btn btn-outline-primary" value="Login" >Login</button>
+             </form>
               <%}%>
 
 </div>

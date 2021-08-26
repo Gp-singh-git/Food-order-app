@@ -4,43 +4,60 @@
     <title>Royal Baker</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </head>
   <body>
     <%- include('partials/_header') %>
     <!--styling for the home page -->
-    <section class ="cover-page">
-        <div class="title-container">
-            <!-- START THE CONTENT FOR THE INTRO  -->
-            <img class="cover-image" src="/images/r.jpg">
-                 <!-- <span class="text-center"><b>Royal Bakery Cakes</b></span> -->
-            </div>
-    </section>
 
-    <section class="p-class">
       <div>
-        <article>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          Aenean commodo ligula eget dolor.
-          Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-          Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-          Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-          Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-          Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-          Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-          Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-          Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
-          Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
-          Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
-          Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
-          Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-          Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-        </article>
+
+                  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="\images\cupcake.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="\images\cupcakes.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="\images\cupcakes-white.jpg" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+
+
+    <section class="p-class border-5"">
+      <div>
+        <img src="/images/chef.png">
+      </div>
+      <div>
+        <div class="p-text">
+        <h1>Welcome to Royal Bakery</h1>
+          <span>Home of delicious, yummy and fresh pastries</span>
+        </div>
+        <div>
+        <p>
+          At Royal Bakery our passion is to produce breathtaking and delicious custom cakes, cupcakes, and small desserts that will not only compliment your special events but be remembered for years to come. We will work with you to take your creative vision and inspiration and turn them into reality.
+
+        </p>
+      </div>
       </div>
     </section>
     <section>

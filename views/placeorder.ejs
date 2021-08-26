@@ -36,7 +36,7 @@
               <td> <%=item.quantity%></td>
               <td>$ <%=item.quantity * item.price%></td>
               <td><form method = "POST" action="/placeorder/del/<%=item.id%>">
-              <input type="submit" value = "Delete" style =  >
+              <button type="submit" value = "Delete" class="btn btn-lg btn-outline-danger">Delete </button>
               </form></td>
 
 
@@ -52,7 +52,8 @@
   <label> Total order value = $<%=total%></label>
   <form method="POST" action="/placeorder/done">
     <input type="text" name = "total" hidden value = "<%=total%>" >
-    <input type="submit" value = "Book order" style = "font-weight: bold; font-size: 20px "></form>
+    <button type="submit" value="Book order" class="btn btn-primary"> Book order </button>
+    </form>
 
   </form>
 </div>

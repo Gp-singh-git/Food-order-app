@@ -9,11 +9,10 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
   </head>
-  <body style=  "background-color: rgb(192, 221, 151); display:flex; justify-content:center; flex-direction:column">
+  <body >
+   <div class="owner-div">
     <%- include('partials/_header') %>
-<br><br>
-<br>
-<br>
+
 
 <% for(let item of items.reverse()) { %>
 
@@ -44,9 +43,6 @@
       <input type="text" name="ready_value">
       <br>
       <button type="submit">Update</button>
-      <style type="text/css" >
-        body{ background-color: rgb(214, 125, 125); }
-      </style>
 
 
       <%} else {%>
@@ -78,10 +74,11 @@
 
 
 
-<br><br>
+
 
 
 
 <% }%>
+   </div>
   </body>
 </html>
