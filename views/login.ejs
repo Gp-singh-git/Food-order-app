@@ -13,58 +13,64 @@
     <%- include('partials/_header') %>
 
     <main class="login-form">
-      <div>
-
-
-        <div>
-          <h3 style="text-align: center;">Existing User? Login here</h3>
-        <form action="/login"  class="form-inline" method="POST">
-
+      <div class="login-col">
           <div>
+            <form action="/login"  class="row g-3" method="POST">
+              <h3 style="text-align: center;">Existing User? Login here</h3>
             <div class="col-auto">
               <label class="sr-only" for="emailx">Enter Email</label>
-              <input type="text" class="form-control mb-2" name= "emailx" id="inlineFormInput" placeholder="Enter Email">
+              <input type="text" class="form-control" name= "emailx" id="inlineFormInput" placeholder="Enter Email">
             </div>
             <div class="col-auto">
               <label class="sr-only" for="passwordx">Enter Password</label>
-              <div class="input-group mb-2">
-
                 <input type="password" class="form-control" id="inlineFormInputGroup" name= "passwordx" placeholder="Password">
               </div>
-            </div>
-
             <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-2">Submit</button>
             </div>
-          </div>
         </form>
       </div>
 
-        <h3 style="text-align: center;">New User? Please Sign up</h3>
-        <form class="form-register" action="/login/r" method="POST">
-          <div class="form-group">
+        <div id="register-form">
+        <form class="form-register row g-3" action="/login/r" method="POST">
+          <h3 style="text-align: center;">New User? Please Sign up</h3>
+          <div class="form-group col md-6">
             <label for="first_name">Enter First Name:</label>
             <input class="form-control" type="text" name="first_name"  required>
+            </div>
+            <div class="col-md-6">
             <label for="last_name">Enter Last Name:</label>
             <input class="form-control" type="text" name="last_name" required >
+          </div>
+          <div class="col-md-4">
             <label for="mobile_number">Enter Mobile number:</label>
             <input class="form-control" type="text" name="mobile_number"  required >
+          </div>
+          <div class="col-md-6">
             <label for="email">Enter email:</label>
             <input class="form-control" type="email" name="email"  required >
+          </div>
+          <div class="col-md-6">
             <label for="password">Enter a password:</label>
             <input class="form-control" type="password" name="password"  required >
+          </div>
+          <div class="col-12">
             <label for="address">Enter Current Address:</label>
             <textarea class="form-control" name="address"  required></textarea>
+          </div>
             <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-2">Submit</button>
             </div>
-          </div>
         </form>
       </div>
+    </div>
     </main>
-    <footer class="login-footer">
-      <p class="name-text">Designed By: Shakirat, Ruchika, Gurpreet<br>
-        <a href="mailto:hege@example.com">hege@example.com</a></p>
+
+    <footer class="footer py-3 bg-primary text-white" id="login-footer">
+      <div class="container">
+        <span class="text-white">Designed By: Shakirat, Ruchika, Gurpreet</span>
+
+      </div>
     </footer>
 
 </body>

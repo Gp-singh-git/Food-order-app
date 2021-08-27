@@ -14,26 +14,28 @@
     <%- include('partials/_header') %>
 
 <form method="GET" class="place-order" action="/placeorder">
-  <button type="submit" value = "Place order" class="btn btn-primary"> Place order </button>
+  <button type="submit" value = "Place order" class="btn btn-lg btn-outline-primary"> Place order </button>
 
 </form>
 
     <section class="order-section">
-      <table class="order-table">
-
-          <tr class="header-items">
+      <table class="table table-borderless">
+        <thead>
+          <!-- <tr class="header-items"> -->
+            <tr>
             <th scope="col"><h4><b>Item image</b></h4></th>
             <th scope="col"><h4><b>Item Name</b></h4></th>
             <th scope="col"><h4><b>Price</b></h4></th>
             <th scope="col"><h4><b>Quantity</b></h4></th>
             <th scope="col"><h4><b>Cart</b></h4></th>
           </tr>
-
+        </thead>
         <tbody>
 
           <% for(let item of items) { %>
             <tr class="table-items">
-              <td><img src ='<%=item.image%>'></td>
+              <th scope="row"><img src ='<%=item.image%>'></th>
+              <!-- <td><img src ='<%=item.image%>'></td> -->
               <td><b><%= item.name %></b></td>
               <td>$<%= item.price %></td>
               <form class = "spl1" method="POST" action="/orders/<%= item.id %>">
@@ -53,7 +55,7 @@
               </select>    </td>
 
               <td>
-                <button type="submit" class="cart-button btn btn-lg btn-outline-primary" value = "Add to Cart">Add to Cart</button>
+                <button type="submit" class="cart-button btn btn-lg btn-outline-primary" value = "Add to Cart">Add to Order</button>
               </td>
             </form>
             </tr>
@@ -61,26 +63,13 @@
         </tbody>
       </table>
 
-
-
-
-
-
-      <!-- <table>
-        <thead>
-          <tr>item name</tr>
-        </thead>
-        <tbody>
-          <% for (let item of items) { %>
-            <tr>
-              td> <%=item.name%> </td>
-            </tr>
-            <%}%>
-
-        </tbody>
-      </table> -->
-
-
   </section>
+
+  <footer class="footer mt-5 py-3 bg-primary text-white" id="order-footer">
+    <div class="container">
+      <span class="text-white">Designed By: Shakirat, Ruchika, Gurpreet</span>
+
+    </div>
+  </footer>
   </body>
 </html>
