@@ -1,4 +1,4 @@
-Royal Bakery (Food Pick up Ordering)
+## Royal Bakery (Food Pick up Ordering)
 
 This is a full-stack website app for a fake take-out Bakery Shop, named "Royal Bakery". 
 
