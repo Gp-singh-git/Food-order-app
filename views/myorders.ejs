@@ -20,6 +20,7 @@
             <th scope="col"><h4><b>Total Price</b></h4></th>
             <th scope="col"><h4><b>Order Date</b></h4></th>
             <th scope="col"><h4><b>Order Time</b></h4></th>
+            <th scope="col"><h4><b>Picked At</b></h4></th>
             <th scope="col"><h4><b>Feedback</b></h4></th>
 
           </tr>
@@ -38,7 +39,10 @@
               <td>$ <%=item.total_price%></td>
               <td> <%=item.order_date.toLocaleString().slice(0,-13)%></td>
               <td> <%=item.order_time%></td>
-              <% if (item.rating) {%>
+              <td> <%=item.picked_at%></td>
+              <% if (!item.picked_at) {%>
+                <td style = "Color:rgb(255, 60, 0)"> In-Progress</td>
+                <%} else if (item.rating) {%>
                 <td> <%=item.rating%></td>
               <% } else { %>
               <td><form method = "GET" action="/myorders/<%=item.id%>">

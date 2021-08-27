@@ -7,7 +7,7 @@ module.exports = (db) => {
     const ckv_id = req.session.ck_id;
     const ckv_fn = req.session.ck_fn;
 //tables used: orders and reviews to see previous orders of user.
-    db.query(`SELECT orders.id, order_time, order_date, total_price, rating from orders FULL JOIN reviews ON orders.id = reviews.order_id WHERE orders.user_id = ${ckv_id} ORDER BY orders.id DESC;
+    db.query(`SELECT orders.id, order_time, order_date, total_price, rating, picked_at from orders FULL JOIN reviews ON orders.id = reviews.order_id WHERE orders.user_id = ${ckv_id} ORDER BY orders.id DESC;
     `)
       .then(data => {
         const items = data.rows;
