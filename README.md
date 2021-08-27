@@ -48,35 +48,32 @@ Features:
 - Body-parser
 
 
-
 ## Screenshots
 
-![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Feedback%20page.png?raw=true)
 
 
 ![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Home%20page.png?raw=true)
 
 
 
-![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Menu.png?raw=true
-)
-
-
-![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/My%20orders%20page.png?raw=true)
-
+![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Menu.png?raw=true)
 
 
 ![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Orders%20Page.png?raw=true)
 
 
 
-![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Owner%20orders%20Page.png?raw=true
-)
-
-
 ![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Place%20order%20page.png?raw=true)
 
 
 
-![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/User%20Reviews%20page.png?raw=true
-)
+
+![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/My%20orders%20page.png?raw=true)
+
+
+![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Feedback%20page.png?raw=true)
+
+
+![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/Owner%20orders%20Page.png?raw=true)
+
+![](https://github.com/Shaakirahkomolafe/Food-order-app/blob/master/public/Screenshots/User%20Reviews%20page.png?raw=true)
