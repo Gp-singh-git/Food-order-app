@@ -61,7 +61,7 @@ module.exports = (db, client) => {
               .catch(error => console.log(error));
 //Sending SMS to owner
             client.messages.create({
-              to: `6478692189`,
+              to: `7777777777`,
               from: '+14083407572',
               body: `Received order from ${xyz.first_name}, with Order no. ${x.id} and Total Amount: $${xyz.total_price}`})
               .then(message => console.log(message))

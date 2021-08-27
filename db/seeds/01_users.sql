@@ -1,6 +1,6 @@
 -- Users table seeds here (Example)
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Admin', 'Admin', 6478692189, 'admin@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '23 street1 toronto, canada');
-INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('John', 'Oliver', 5199989328, 'user1@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '46 street2 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Admin', 'Admin', 7777777777, 'admin@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '23 street1 toronto, canada');
+INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('John', 'Oliver', 8888888888, 'user1@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '46 street2 toronto, canada');
 INSERT INTO users (first_name, last_name, mobile_number, email, password, address) VALUES ('Adam', 'Miller', 9999999999, 'user2@gmail.com', '$2b$10$TcbAdZTVib3./IvkgJ96euH7zj/rlQ/Qo78OlTo3hXJuiWG8f9GmG', '70 street3 toronto, canada');
 
 
