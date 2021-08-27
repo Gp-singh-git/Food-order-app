@@ -39,9 +39,13 @@
               <td>$ <%=item.total_price%></td>
               <td> <%=item.order_date.toLocaleString().slice(0,-13)%></td>
               <td> <%=item.order_time%></td>
+              <% if (item.picked_at) {%>
               <td> <%=item.picked_at%></td>
-              <% if (!item.picked_at) {%>
+              <% } else { %>
                 <td style = "Color:rgb(255, 60, 0)"> In-Progress</td>
+                <%}%>
+              <% if (!item.picked_at) {%>
+                <td style = "Color:rgb(255, 60, 0)"></td>
                 <%} else if (item.rating) {%>
                 <td> <%=item.rating%></td>
               <% } else { %>
